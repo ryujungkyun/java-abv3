@@ -16,28 +16,23 @@ public class M4MeasureTime {
 
 
     public static void main(String[] args) {
-    // 1. 익명 클래스로 1부터 N까지 합 구하기
-        measure(new Procedure() {
-            @Override
-            public void run() {
-                int N = 100;
-                int sum = 0;
-                for (int i = 1; i <= N; i++) {
-                    sum += i;
-                }
-                System.out.println("[1부터 " + N + "까지 합] 결과: " + sum);
+        // 1. 람다로 1부터 N까지 합 구하기
+        measure(() -> {
+            int N = 100;
+            int sum = 0;
+            for (int i = 1; i <= N; i++) {
+                sum += i;
             }
+            System.out.println("[1부터 " + N + "까지 합] 결과: " + sum);
         });
 
-        // 2. 익명 클래스로 배열 정렬
-        measure(new Procedure() {
-            @Override
-            public void run() {
-                int[] array = {4, 3, 2, 1};
-                System.out.println("원본 배열: " + Arrays.toString(array));
-                Arrays.sort(array);
-                System.out.println("배열 정렬: " + Arrays.toString(array));
-            }
+
+        // 2.람다로 배열 정렬
+        measure(() -> {
+            int[] array = {4, 3, 2, 1};
+            System.out.println("원본 배열: " + Arrays.toString(array));
+            Arrays.sort(array);
+            System.out.println("배열 정렬: " + Arrays.toString(array));
         });
     }
 }

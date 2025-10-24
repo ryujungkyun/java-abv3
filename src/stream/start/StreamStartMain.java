@@ -1,6 +1,5 @@
 package stream.start;
 
-import java.awt.image.ImageProducer;
 import java.io.PrintStream;
 import java.util.List;
 import java.util.stream.Stream;

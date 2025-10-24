@@ -17,6 +17,5 @@ public class ConsumerMain {
         // 람다
         Consumer<String> consumer2 = s -> System.out.println(s);
         consumer2.accept("hello consumer");
-
     }
 }
